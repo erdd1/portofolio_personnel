@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { ArrowDown, Download, Mail, MessageCircle } from "lucide-react";
+import { ArrowDown, Download, Mail } from "lucide-react";
 import { urlFor } from "@/sanity/image";
 import type { SiteSettings } from "@/lib/types";
-import { GithubIcon, LinkedinIcon } from "./icons/BrandIcons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons/BrandIcons";
 
 export function Hero({ settings }: { settings: SiteSettings }) {
   const {
@@ -68,7 +68,7 @@ export function Hero({ settings }: { settings: SiteSettings }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold transition hover:border-accent-a hover:text-accent-a"
               >
-                <MessageCircle className="h-4 w-4" />
+                <WhatsappIcon className="h-4 w-4" />
                 Discuter sur WhatsApp
               </a>
             )}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { WhatsappIcon } from "./icons/BrandIcons";
 
 export function WhatsAppButton({
   whatsappNumber,
@@ -27,7 +27,7 @@ export function WhatsAppButton({
       whileTap={{ scale: 0.94 }}
       className="animate-pulse-ring fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-lg shadow-black/20"
     >
-      <MessageCircle className="h-7 w-7" fill="white" strokeWidth={0} />
+      <WhatsappIcon className="h-7 w-7 text-white" />
     </motion.a>
   );
 }

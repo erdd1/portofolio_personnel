@@ -1,7 +1,7 @@
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 import { AnimatedIn } from "./AnimatedIn";
 import type { SiteSettings } from "@/lib/types";
-import { GithubIcon, LinkedinIcon } from "./icons/BrandIcons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons/BrandIcons";
 
 export function Contact({ settings }: { settings: SiteSettings }) {
   const { email, githubUrl, linkedinUrl, whatsappNumber, fullName } = settings;
@@ -41,7 +41,7 @@ export function Contact({ settings }: { settings: SiteSettings }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#25d366] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#25d366]/25 transition hover:brightness-105"
             >
-              <MessageCircle className="h-4 w-4" />
+              <WhatsappIcon className="h-4 w-4" />
               Écrire sur WhatsApp
             </a>
           )}
