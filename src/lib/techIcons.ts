@@ -35,7 +35,12 @@ import {
   SiVercel,
   SiJquery,
   SiBootstrap,
+  SiTerraform,
+  SiAnsible,
+  SiGithubactions,
+  SiGitlab,
 } from "react-icons/si";
+import { FaAws, FaWindows, FaJava } from "react-icons/fa";
 
 export type TechCategory = "frontend" | "backend" | "mobile" | "database" | "devops";
 
@@ -94,6 +99,9 @@ const TECH_MAP: Record<string, TechMeta> = {
   sqlite: { icon: SiSqlite, color: "#003B57", category: "database" },
   firebase: { icon: SiFirebase, color: "#FFCA28", category: "database" },
 
+  "java ee": { icon: FaJava, color: "#007396", category: "backend" },
+  java: { icon: FaJava, color: "#007396", category: "backend" },
+
   docker: { icon: SiDocker, color: "#2496ED", category: "devops" },
   git: { icon: SiGit, color: "#F05032", category: "devops" },
   github: { icon: SiGithub, color: "#181717", category: "devops" },
@@ -101,6 +109,14 @@ const TECH_MAP: Record<string, TechMeta> = {
   nginx: { icon: SiNginx, color: "#009639", category: "devops" },
   linux: { icon: SiLinux, color: "#FCC624", category: "devops" },
   vercel: { icon: SiVercel, category: "devops" },
+  aws: { icon: FaAws, color: "#FF9900", category: "devops" },
+  "windows server": { icon: FaWindows, color: "#0078D6", category: "devops" },
+  windows: { icon: FaWindows, color: "#0078D6", category: "devops" },
+  terraform: { icon: SiTerraform, color: "#7B42BC", category: "devops" },
+  ansible: { icon: SiAnsible, color: "#EE0000", category: "devops" },
+  "github actions": { icon: SiGithubactions, color: "#2088FF", category: "devops" },
+  "gitlab ci": { icon: SiGitlab, color: "#FC6D26", category: "devops" },
+  gitlab: { icon: SiGitlab, color: "#FC6D26", category: "devops" },
 };
 
 export function getTechMeta(name: string): TechMeta | undefined {

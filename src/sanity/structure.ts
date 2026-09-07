@@ -16,6 +16,9 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList("experience").title("Expériences professionnelles")
         ),
       S.listItem()
+        .title("Formation")
+        .child(S.documentTypeList("education").title("Formation")),
+      S.listItem()
         .title("Publications")
         .child(S.documentTypeList("post").title("Publications")),
     ]);

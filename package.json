@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx scripts/seed.ts",
-    "add-posts": "tsx scripts/add-posts.ts"
+    "add-posts": "tsx scripts/add-posts.ts",
+    "update-cv": "tsx scripts/update-cv-content.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
