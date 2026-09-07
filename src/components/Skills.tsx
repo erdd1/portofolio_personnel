@@ -80,6 +80,11 @@ export function Skills({ skills }: { skills: string[] }) {
     }, RESUME_AFTER_MANUAL_MS);
   }
 
+  const maxCount = Math.max(
+    1,
+    ...availableCategories.map((cat) => grouped[cat].length)
+  );
+
   if (!skills?.length || !active) return null;
 
   const visible = grouped[active];
@@ -141,7 +146,22 @@ export function Skills({ skills }: { skills: string[] }) {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4"
             >
-              {visible.map((skill, i) => {
+              {Array.from({ length: maxCount }).map((_, i) => {
+                const skill = visible[i];
+
+                if (!skill) {
+                  return (
+                    <div
+                      key={`placeholder-${i}`}
+                      className="invisible flex items-center gap-3 rounded-xl px-4 py-3.5"
+                      aria-hidden
+                    >
+                      <span className="h-6 w-6 shrink-0" />
+                      <span className="text-sm font-medium">&nbsp;</span>
+                    </div>
+                  );
+                }
+
                 const meta = getTechMeta(skill);
                 const Icon = meta?.icon;
                 return (
