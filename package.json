@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed.ts",
+    "add-posts": "tsx scripts/add-posts.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
