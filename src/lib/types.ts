@@ -43,16 +43,6 @@ export interface Experience {
   technologies?: string[];
 }
 
-export interface Education {
-  _id: string;
-  degree: string;
-  institution: string;
-  location?: string;
-  startDate: string;
-  endDate?: string;
-  description?: string;
-}
-
 export type PostType = "avis" | "projet";
 
 export type AnimationVariant =

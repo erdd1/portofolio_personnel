@@ -1,7 +1,7 @@
 /**
  * Met à jour le site avec les informations exactes du CV : bio, email,
- * compétences complètes, dates réelles des expériences, nouvelles
- * expériences et parcours académique complet.
+ * compétences complètes, dates réelles des expériences et nouvelles
+ * expériences professionnelles.
  * À exécuter une fois : `npm run update-cv`.
  */
 import { config } from "dotenv";
@@ -114,57 +114,6 @@ async function run() {
     description:
       "Apprentissage du marketing digital chez Smart Digital and Communication, à Yaoundé.",
     technologies: [],
-  });
-
-  console.log("→ Ajout du parcours académique...");
-  await client.createOrReplace({
-    _id: "education-ingenieur",
-    _type: "education",
-    degree: "Ingénieur des Travaux Informatiques — Génie Logiciel",
-    institution: "IAI-Cameroun",
-    location: "Yaoundé, Cameroun",
-    startDate: "2022-09-01",
-    endDate: "2025-06-30",
-  });
-
-  await client.createOrReplace({
-    _id: "education-bac",
-    _type: "education",
-    degree: "Baccalauréat ESG",
-    institution: "Collège Adventiste d'Odza",
-    location: "Yaoundé, Cameroun",
-    startDate: "2021-09-01",
-    endDate: "2022-06-30",
-  });
-
-  await client.createOrReplace({
-    _id: "education-probatoire",
-    _type: "education",
-    degree: "Probatoire ESG",
-    institution: "Collège Adventiste d'Odza",
-    location: "Yaoundé, Cameroun",
-    startDate: "2020-09-01",
-    endDate: "2021-06-30",
-  });
-
-  await client.createOrReplace({
-    _id: "education-bepc",
-    _type: "education",
-    degree: "Brevet d'Études du Premier Cycle",
-    institution: "Collège Adventiste d'Odza",
-    location: "Yaoundé, Cameroun",
-    startDate: "2018-09-01",
-    endDate: "2019-06-30",
-  });
-
-  await client.createOrReplace({
-    _id: "education-primaire",
-    _type: "education",
-    degree: "Certificat d'Études Primaires",
-    institution: "École primaire Saint-Pierre Apôtre",
-    location: "Yaoundé, Cameroun",
-    startDate: "2014-09-01",
-    endDate: "2015-06-30",
   });
 
   console.log("Terminé.");

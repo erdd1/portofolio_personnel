@@ -39,18 +39,6 @@ export const experiencesQuery = groq`
   }
 `;
 
-export const educationQuery = groq`
-  *[_type == "education"] | order(startDate desc){
-    _id,
-    degree,
-    institution,
-    location,
-    startDate,
-    endDate,
-    description
-  }
-`;
-
 export const postsQuery = groq`
   *[_type == "post"] | order(publishedAt desc){
     _id,
