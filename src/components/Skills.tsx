@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { AnimatedIn } from "./AnimatedIn";
 import {
   TECH_CATEGORY_LABELS,
@@ -136,55 +136,44 @@ export function Skills({ skills }: { skills: string[] }) {
           </div>
         )}
 
-        <div className="relative mt-8 min-h-[4.5rem]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -24 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4"
-            >
-              {Array.from({ length: maxCount }).map((_, i) => {
-                const skill = visible[i];
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+          {Array.from({ length: maxCount }).map((_, i) => {
+            const skill = visible[i];
 
-                if (!skill) {
-                  return (
-                    <div
-                      key={`placeholder-${i}`}
-                      className="invisible flex items-center gap-3 rounded-xl px-4 py-3.5"
-                      aria-hidden
-                    >
-                      <span className="h-6 w-6 shrink-0" />
-                      <span className="text-sm font-medium">&nbsp;</span>
-                    </div>
-                  );
-                }
+            if (!skill) {
+              return (
+                <div
+                  key={`placeholder-${active}-${i}`}
+                  className="invisible flex h-16 items-center gap-3 rounded-xl px-4 py-3.5"
+                  aria-hidden
+                >
+                  <span className="h-6 w-6 shrink-0" />
+                  <span className="text-sm font-medium">&nbsp;</span>
+                </div>
+              );
+            }
 
-                const meta = getTechMeta(skill);
-                const Icon = meta?.icon;
-                return (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: Math.min(i * 0.04, 0.3) }}
-                    className="card-surface glow-ring flex items-center gap-3 rounded-xl px-4 py-3.5 transition"
-                  >
-                    {Icon && (
-                      <Icon
-                        className="h-6 w-6 shrink-0"
-                        style={{ color: meta.color }}
-                        aria-hidden
-                      />
-                    )}
-                    <span className="text-sm font-medium">{skill}</span>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </AnimatePresence>
+            const meta = getTechMeta(skill);
+            const Icon = meta?.icon;
+            return (
+              <motion.div
+                key={skill}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.24) }}
+                className="card-surface glow-ring flex h-16 items-center gap-3 rounded-xl px-4 py-3.5 transition"
+              >
+                {Icon && (
+                  <Icon
+                    className="h-6 w-6 shrink-0"
+                    style={{ color: meta.color }}
+                    aria-hidden
+                  />
+                )}
+                <span className="line-clamp-2 text-sm font-medium">{skill}</span>
+              </motion.div>
+            );
+          })}
         </div>
 
         {availableCategories.length > 1 && (
