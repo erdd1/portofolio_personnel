@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { ArrowDown, Mail, MessageCircle } from "lucide-react";
+import { ArrowDown, Download, Mail, MessageCircle } from "lucide-react";
 import { urlFor } from "@/sanity/image";
 import type { SiteSettings } from "@/lib/types";
 import { GithubIcon, LinkedinIcon } from "./icons/BrandIcons";
@@ -18,6 +18,7 @@ export function Hero({ settings }: { settings: SiteSettings }) {
     linkedinUrl,
     email,
     whatsappNumber,
+    resumeFile,
   } = settings;
 
   return (
@@ -69,6 +70,17 @@ export function Hero({ settings }: { settings: SiteSettings }) {
               >
                 <MessageCircle className="h-4 w-4" />
                 Discuter sur WhatsApp
+              </a>
+            )}
+            {resumeFile?.asset?.url && (
+              <a
+                href={resumeFile.asset.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold transition hover:border-accent-a hover:text-accent-a"
+              >
+                <Download className="h-4 w-4" />
+                Télécharger mon CV
               </a>
             )}
           </div>
